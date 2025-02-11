@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I2MC - Learn Computing With Us...</title>
+</head>
+
+<body>
+  {% block content %}
+
+
+  <!-- <div class="container align-items-center">
+    {% if messages %}
+    {% for message in messages %}
+    <br>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+  </div> -->
+
+  <br>
+      <!-- Banner Image Start -->
+      <img src="{% static 'images/login.jpg' %}" class="img-fluid newflex" alt="..." style="width:auto;">
+      <!-- Banner Image End -->
+
+
+  <div class="container h-auto d-flex justify-content-center align-items-center">
+
+    <div class="card m-5" style="padding: 35px 40px;background: #fcfcfd;border: 2px solid #00c982;">
+
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <h1 class="fw-bold" style="color: #00c982;font-weight: bold;">SIGN IN</h1><br>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label fw-medium lbl-margin">Username</label>
+          <input type="text" class="form-control" name="username">
+        </div><br>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label fw-medium lbl-margin">Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn-normal">Submit</button>
+      </form>
+
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+</body>
+
+</html>

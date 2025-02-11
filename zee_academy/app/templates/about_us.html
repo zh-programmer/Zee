@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Who We Are ? - Zee Academy{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+
+    <br><br>
+
+    <!-- Banner Image Start -->
+    <img src="{% static 'images/about_us.jpg' %}" class="img-fluid newflex" alt="..." style="width:auto;">
+    <!-- Banner Image End -->
+
+    <div class="container">
+
+          <!--  -->
+          <!--  -->
+          <div class="card m-3" style="max-width:100% ;border: 1px solid #00c982;border-radius: 30px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'images/logo_img.jpg' %}" class="img-fluid" alt="..." style="border-top-left-radius:30px;border-bottom-left-radius: 30px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body  card-body-new">
+                  <h2 class="card-title c-t-bold" style="color: #00c982;">Who We Are ?</h2>
+                  <hr style="color: #00c982;opacity: 1;">
+                  <p class="card-text c-t-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                  <p class="card-text c-t-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div><br>
+
+
+
+
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>

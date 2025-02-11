@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Zee Academy - Perfect Place To Learn Computing{% endblock %}</title>
+</head>
+
+<body>
+  {% block content %}
+
+  </svg>
+
+  <!-- Banner Image Start -->
+  <!-- <img src="{% static 'images/banner.png' %}" class="img-fluid newflex" alt="..." style="height:600px;"> -->
+  <!-- Banner Image End -->
+
+  <!--  -->
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/banner_1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/banner_1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/banner_1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!--  -->
+
+  <div class="container">
+
+    <!-- Free Tutorial Section Start -->
+    <section id="free-tuto">
+      <br>
+
+      <!-- Banner Image Start -->
+      <img src="{% static 'images/free_courses.jpg' %}" class="img-fluid newflex" alt="..." style="width:auto;">
+      <!-- Banner Image End -->
+
+      <div class="container">
+        {% for free_tutorials in object_list %}
+        <!-- Cards -->
+        {% if forloop.first %}<div class="row">{% endif %}
+
+          <div class="card"
+            style="width: 18rem;margin: auto;margin-bottom: 30px;padding: 0;margin-top:30px;border: 2px solid #00c982;">
+            <a href="{% url 'free_view' free_tutorials.pk %}" class="btn btn-light"><img
+                src="https://img.youtube.com/vi/{{ free_tutorials.thumb }}/maxresdefault.jpg" class="card-img-top"
+                alt="...">
+            </a>
+
+            <div class="card-body">
+              <div class="alert-light" style="color: #00c982;font-weight: bold;">{{ free_tutorials.title }}</div>
+              <hr style="color: #00c982;opacity: 1;">
+              <a href="{% url 'free_view' free_tutorials.pk %}" class="btn-normal">Learn Now</a>
+            </div>
+          </div>
+          {% if forloop.counter|divisibleby:3 %}
+
+        </div>
+        <div class="row">{% endif %}
+          {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+
+
+      </div>
+
+    </section>
+
+    <!-- Free Tutorial Section End -->
+     </div>
+
+
+     <div class="container-20">
+    <!-- Feedback Section Start -->
+    <section id="feedback">
+      <br>
+
+      <!-- Banner Image Start -->
+      <img src="{% static 'images/feedback.jpg' %}" class="img-fluid newflex" alt="..." style="width:auto;">
+      <!-- Banner Image End -->
+
+      <!-- Cards -->
+
+
+          <!-- MARQUEE HERE -->
+          <div class="marquee">
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+
+            <div class="card_n mb-3">
+              <div class="card-top">
+                <img src="{% static 'images/male_profile.png' %}" class="card-img-top top-new" alt="...">
+                <div class="top-content">
+                  <h5 class="card-title card-title-new">Student 1</h5>
+                  <p class="card-subtitle card-subtitle-new">Batch</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text card-text-new">This is a wider card with supporting text below as a natural lead-in
+                  to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            
+          </div>
+
+            <!-- END MARQUEE HERE -->
+
+
+
+          </div>
+
+          <!--  -->
+          <!--  -->
+          <!--  -->
+
+    </section>
+
+    <!-- Feedback Section End -->
+
+
+
+  {% endblock %}
+
+
+</body>
+
+</html>

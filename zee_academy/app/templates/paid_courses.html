@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Our Courses - Zee Academy{% endblock %}</title>
+</head>
+
+<body>
+  {% block content %}
+
+
+
+  <!-- paid Tutorial Section Start -->
+  <section id="paid-tuto">
+    <br>
+    <!-- Banner Image Start -->
+    <img src="{% static 'images/popular_courses.jpg' %}" class="img-fluid newflex" alt="..." style="width:auto;">
+    <!-- Banner Image End -->
+
+    <div class="container">
+      {% for paid_courses in object_list %}
+      <!-- Cards -->
+      {% if forloop.first %}<div class="row">{% endif %}
+
+        <div class="card" style="width: 18rem;margin: auto;margin-bottom: 30px;padding: 0;margin-top:30px;">
+          <a href="{% url 'paid_courses_view' paid_courses.pk %}" class="btn btn-light"><img
+              src="https://img.youtube.com/vi/{{ paid_courses.thumb }}/maxresdefault.jpg" class="card-img-top"
+              alt="..."></a>
+          <div class="card-body">
+
+            <div class="alert alert-light" role="alert">{{ paid_courses.title }}</div>
+            <hr>
+            <a href="{% url 'paid_courses_view' paid_courses.pk %}" class="btn btn-light">Learn Now</a>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+
+      </div>
+      <div class="row">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+      {% endfor %}
+
+
+    </div>
+
+  </section>
+
+  <!-- paid Tutorial Section End -->
+
+
+  {% endblock %}
+
+  <!-- Footer Section Start -->
+  <footer class="bg-light text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i
+            class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i
+            class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i
+            class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#" role="button"><i
+            class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i
+            class="fab fa-linkedin-in"></i></a>
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" role="button"><i
+            class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #b2b2b2;">
+      © Copyright 2023 All Rights Received
+      <a class="text-white" href="#">Wikideas</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer Section End -->
+
+</body>
+
+</html>
